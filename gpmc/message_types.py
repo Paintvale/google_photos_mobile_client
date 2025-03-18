@@ -212,6 +212,7 @@ GET_UPLOAD_TOKEN = {
     "3": {"type": "int"},
     "4": {"type": "int"},
     "7": {"type": "int"},
+    "10": {"type": "string"},
 }
 
 ADD_MEDIA_TO_ALBUM = {
