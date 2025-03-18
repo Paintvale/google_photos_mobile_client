@@ -85,7 +85,7 @@ def get_upload_token(sha_hash_b64: str, file_size: int, auth_token: str, timeout
         requests.HTTPError: If the api request fails.
     """
 
-    proto_body = {"1": 2, "2": 2, "3": 1, "4": 3, "7": file_size}
+    proto_body = {"1": 2, "2": 2, "3": 1, "4": 1, "7": file_size, "10": "\u0000"}
 
     serialized_data = blackboxprotobuf.encode_message(proto_body, message_types.GET_UPLOAD_TOKEN)  # type: ignore
 
@@ -93,7 +93,7 @@ def get_upload_token(sha_hash_b64: str, file_size: int, auth_token: str, timeout
         "Accept-Encoding": "gzip",
         "Accept-Language": "en_US",
         "Content-Type": "application/x-protobuf",
-        "User-Agent": "com.google.android.apps.photos/49029607 (Linux; U; Android 9; en_US; Pixel XL; Build/PQ2A.190205.001; Cronet/127.0.6510.5) (gzip)",
+        "User-Agent": "com.google.android.apps.photos/49830864 (Linux; U; Android 13; pt_BR; Pixel 5; Build/TQ2A.230505.002.A1; Cronet/133.0.6876.3) (gzip)",
         "Authorization": f"Bearer {auth_token}",
         "X-Goog-Hash": f"sha1={sha_hash_b64}",
         "X-Upload-Content-Length": str(file_size),
@@ -126,7 +126,7 @@ def find_remote_media_by_hash(sha1_hash: bytes, auth_token: str, timeout: int = 
         "Accept-Encoding": "gzip",
         "Accept-Language": "en_US",
         "Content-Type": "application/x-protobuf",
-        "User-Agent": "com.google.android.apps.photos/49029607 (Linux; U; Android 9; en_US; Pixel XL; Build/PQ2A.190205.001; Cronet/127.0.6510.5) (gzip)",
+        "User-Agent": "com.google.android.apps.photos/49830864 (Linux; U; Android 13; pt_BR; Pixel 5; Build/TQ2A.230505.002.A1; Cronet/133.0.6876.3) (gzip)",
         "Authorization": f"Bearer {auth_token}",
     }
     with new_session_with_retries() as session:
@@ -159,7 +159,7 @@ def upload_file(file: str | Path | bytes | IO[bytes] | Generator[bytes, None, No
     headers = {
         "Accept-Encoding": "gzip",
         "Accept-Language": "en_US",
-        "User-Agent": "com.google.android.apps.photos/49029607 (Linux; U; Android 9; en_US; Pixel XL; Build/PQ2A.190205.001; Cronet/127.0.6510.5) (gzip)",
+        "User-Agent": "com.google.android.apps.photos/49830864 (Linux; U; Android 13; pt_BR; Pixel 5; Build/TQ2A.230505.002.A1; Cronet/133.0.6876.3) (gzip)",
         "Authorization": f"Bearer {auth_token}",
     }
 
@@ -286,7 +286,7 @@ def commit_upload(
         "Accept-Encoding": "gzip",
         "Accept-Language": "en_US",
         "Content-Type": "application/x-protobuf",
-        "User-Agent": "com.google.android.apps.photos/49029607 (Linux; U; Android 9; en_US; Pixel XL; Build/PQ2A.190205.001; Cronet/127.0.6510.5) (gzip)",
+        "User-Agent": "com.google.android.apps.photos/49830864 (Linux; U; Android 13; pt_BR; Pixel 5; Build/TQ2A.230505.002.A1; Cronet/133.0.6876.3) (gzip)",
         "Authorization": f"Bearer {auth_token}",
         "x-goog-ext-173412678-bin": "CgcIAhClARgC",
         "x-goog-ext-174067345-bin": "CgIIAg==",
@@ -330,7 +330,7 @@ def move_remote_media_to_trash(dedup_keys: Sequence[str], auth_token: str, timeo
         "Accept-Encoding": "gzip",
         "Accept-Language": "en_US",
         "Content-Type": "application/x-protobuf",
-        "User-Agent": "com.google.android.apps.photos/49029607 (Linux; U; Android 9; en_US; Pixel XL; Build/PQ2A.190205.001; Cronet/127.0.6510.5) (gzip)",
+        "User-Agent": "com.google.android.apps.photos/49830864 (Linux; U; Android 13; pt_BR; Pixel 5; Build/TQ2A.230505.002.A1; Cronet/133.0.6876.3) (gzip)",
         "Authorization": f"Bearer {auth_token}",
     }
     with new_session_with_retries() as session:
@@ -373,7 +373,7 @@ def create_album(album_name: str, media_keys: Sequence[str], auth_token: str, ti
         "Accept-Encoding": "gzip",
         "Accept-Language": "en_US",
         "Content-Type": "application/x-protobuf",
-        "User-Agent": "com.google.android.apps.photos/49029607 (Linux; U; Android 9; en_US; Pixel XL; Build/PQ2A.190205.001; Cronet/127.0.6510.5) (gzip)",
+        "User-Agent": "com.google.android.apps.photos/49830864 (Linux; U; Android 13; pt_BR; Pixel 5; Build/TQ2A.230505.002.A1; Cronet/133.0.6876.3) (gzip)",
         "Authorization": f"Bearer {auth_token}",
         "x-goog-ext-173412678-bin": "CgcIAhClARgC",
         "x-goog-ext-174067345-bin": "CgIIAg==",
@@ -415,7 +415,7 @@ def add_media_to_album(album_media_key: str, media_keys: Sequence[str], auth_tok
         "Accept-Encoding": "gzip",
         "Accept-Language": "en_US",
         "Content-Type": "application/x-protobuf",
-        "User-Agent": "com.google.android.apps.photos/49029607 (Linux; U; Android 9; en_US; Pixel XL; Build/PQ2A.190205.001; Cronet/127.0.6510.5) (gzip)",
+        "User-Agent": "com.google.android.apps.photos/49830864 (Linux; U; Android 13; pt_BR; Pixel 5; Build/TQ2A.230505.002.A1; Cronet/133.0.6876.3) (gzip)",
         "Authorization": f"Bearer {auth_token}",
         "x-goog-ext-173412678-bin": "CgcIAhClARgC",
         "x-goog-ext-174067345-bin": "CgIIAg==",
