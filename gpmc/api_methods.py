@@ -55,7 +55,7 @@ def get_auth_token(auth_data: str, timeout: int = DEFAULT_TIMEOUT) -> dict[str, 
     }
 
     with new_session_with_retries() as session:
-        response = session.post("https://android.googleapis.com/auth", headers=headers, data=auth_request_data, timeout=timeout)
+        response = session.post("https://android.googleapis.com/auth", headers=headers, data=auth_data, timeout=timeout)
 
     response.raise_for_status()
 
