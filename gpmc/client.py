@@ -62,7 +62,9 @@ class Client:
         """Property that automatically checks and renews the auth token if expired."""
         if int(self.auth_response_cache.get("Expiry", "0")) <= int(time.time()):
             self.auth_response_cache = api_methods.get_auth_token(self.auth_data, timeout=self.timeout)
-        if token := self.auth_response_cache.get("Auth", ""):
+        if token := self.auth_response_cache.get("it", ""):
+            return token
+        elif token := self.auth_response_cache.get("Auth", ""):
             return token
         raise RuntimeError("Auth response does not contain bearer token")
 
@@ -136,7 +138,7 @@ class Client:
             quality = "original"
             if saver:
                 quality = "saver"
-                model = "Pixel 2"
+                model = "Pixel 5"
             if use_quota:
                 model = "Pixel 8"
             media_key = api_methods.commit_upload(
