@@ -23,7 +23,7 @@ Google Photos client based on reverse engineered mobile API.
 Run the command:
 
 ```bash
-pip install https://github.com/xob0t/google_photos_mobile_client/archive/refs/heads/main.zip --force-reinstall
+pip install https://github.com/Paintvale/google_photos_mobile_client/archive/refs/heads/main.zip --force-reinstall
 ```
 
 ## Example Usage
