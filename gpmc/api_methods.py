@@ -51,7 +51,7 @@ def get_auth_token(auth_data: str, timeout: int = DEFAULT_TIMEOUT) -> dict[str, 
         "Connection": "Keep-Alive",
         "Content-Type": "application/x-www-form-urlencoded",
         "device": auth_request_data["androidId"],
-        "User-Agent": "GoogleAuth/1.4 (Pixel XL PQ2A.190205.001); gzip",
+        "User-Agent": "com.google.android.gms/250733032 (Linux; U; Android 13; pt_BR; Pixel 5; Build/TQ2A.230505.002.A1; Cronet/133.0.6876.3)",
     }
 
     with new_session_with_retries() as session:
