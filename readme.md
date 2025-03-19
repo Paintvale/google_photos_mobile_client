@@ -2,6 +2,9 @@
 
 Google Photos client based on reverse engineered mobile API.
 
+> [!WARNING]
+> Turns Out https://github.com/xob0t/gphotos_mobile_client Really Works If You Acquire auth_data From Google Photos ReVanced Instead Of Official Google Photos App, Meaning This Repository Is Now Archived
+
 ---
 
 ## CLI Demo
